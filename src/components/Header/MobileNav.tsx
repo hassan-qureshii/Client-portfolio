@@ -16,7 +16,7 @@ interface MobileNavProps {
 
 const MobileNav: React.FC<MobileNavProps> = ({ close }) => {
   return (
-    <div className="fixed top-0 right-0 h-screen w-1/2 bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] text-white shadow-lg z-50 flex flex-col justify-start">
+    <div className="fixed top-0 right-0 h-screen w-1/2 bg-gradient-to-b from-[#670D7F] via-[#851988] to-[#D63D98] text-white shadow-lg z-50 flex flex-col justify-start">
 
       {/* Close button */}
       <div className="flex justify-end p-4">
@@ -54,7 +54,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ close }) => {
       {/* WhatsApp button fixed at bottom */}
       <div className="mt-auto p-6">
         <a
-          href="https://wa.me/1234567890"  // replace with your real WhatsApp number
+          href="https://wa.me/923349313075"
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full text-center bg-black text-[#f3f8fc] py-3 rounded-full font-semibold"

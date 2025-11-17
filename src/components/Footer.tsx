@@ -26,9 +26,9 @@ const Footer = () => {
 
   // Social media + new icons (without href)
   const socialLinks = [
-    { icon: FaLinkedinIn, href: "https://www.linkedin.com" },
+    { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/amina-gulzar-341846284/" },
     { icon: FaInstagram, href: "https://www.instagram.com/amina454096/?utm_source=qr&igsh=MTNzN2tleGozN3Izcg%3D%3D#" },
-    { icon: FaBehance, href: "https://www.behance.net" },
+    { icon: FaBehance, href: "https://www.behance.net/AminaGulzar" },
 
     // Added (NO href as requested)
     { icon: SiUpwork, href: null },

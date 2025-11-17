@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
   return (
-    <div className="w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center bg-[#f3f8fc]">
+    <div className="w-full min-h-[70vh] flex items-center justify-center bg-[#f3f8fc]">
       <div className="flex flex-col justify-center items-center text-center">
 
         {/* Profile Image with Gradient Border + Hover Animation */}
