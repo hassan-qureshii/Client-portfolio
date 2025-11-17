@@ -6,12 +6,12 @@ import smpartner from "../assets/smpartner.png";
 import thumbnails from "../assets/thumbnails.png";
 
 const services = [
-  { img: flyer },
-  { img: linkedin },
   { img: logofolio },
   { img: smdesigns },
-  { img: smpartner },
+  { img: linkedin },
   { img: thumbnails },
+  { img: flyer },
+  { img: smpartner },
 ];
 
 const Services = () => {

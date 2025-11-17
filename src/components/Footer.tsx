@@ -7,11 +7,11 @@ import {
   FaInfoCircle,
   FaEnvelope,
   FaLinkedinIn,
-  FaFacebook,
   FaInstagram,
-  FaWhatsapp,
   FaBehance,
 } from "react-icons/fa";
+
+import { SiFiverr, SiUpwork } from "react-icons/si";
 
 const Footer = () => {
   // Explore links array
@@ -24,23 +24,27 @@ const Footer = () => {
     { name: "Terms & Conditions", icon: FaFileContract, path: "/terms" },
   ];
 
-  // Social media links array
+  // Social media + new icons (without href)
   const socialLinks = [
     { icon: FaLinkedinIn, href: "https://www.linkedin.com" },
-    { icon: FaFacebook, href: "https://www.facebook.com" },
-    { icon: FaInstagram, href: "https://www.instagram.com" },
-    { icon: FaWhatsapp, href: "https://wa.me/your-number" },
+    { icon: FaInstagram, href: "https://www.instagram.com/amina454096/?utm_source=qr&igsh=MTNzN2tleGozN3Izcg%3D%3D#" },
     { icon: FaBehance, href: "https://www.behance.net" },
+
+    // Added (NO href as requested)
+    { icon: SiUpwork, href: null },
+    { icon: SiFiverr, href: null },
   ];
 
   return (
     <footer className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] text-white px-6 py-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        
         {/* About Section */}
         <div className="space-y-3">
           <h2 className="text-2xl font-bold mb-4">Amina Gulzar</h2>
           <p className="text-sm leading-relaxed">
-            Creative Designer crafting brand stories and digital art that inspires. Combining emotion, precision, and innovation through design.
+            Creative Designer crafting brand stories and digital art that inspires. 
+            Combining emotion, precision, and innovation through design.
           </p>
         </div>
 
@@ -64,18 +68,28 @@ const Footer = () => {
           <h2 className="text-xl font-semibold mb-4">Let's Connect</h2>
           <div className="flex gap-4 mb-4 text-xl">
             {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-200 cursor-pointer border rounded-full border-white p-1"
-              >
-                <social.icon size={18} />
-              </a>
+              social.href ? (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-200 cursor-pointer border rounded-full border-white p-1"
+                >
+                  <social.icon size={18} />
+                </a>
+              ) : (
+                <div
+                  key={index}
+                  className="hover:text-gray-200 cursor-pointer border rounded-full border-white p-1"
+                >
+                  <social.icon size={18} />
+                </div>
+              )
             ))}
           </div>
         </div>
+
       </div>
 
       {/* Footer Bottom */}
