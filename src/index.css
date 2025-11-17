@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f8fc;
+  overflow-x: hidden;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+  html {
+    /* Firefox */
+    scrollbar-width: thin;              /* options: auto | thin | none */
+    scrollbar-color: #D63D98 #f4f4f7;   /* thumb | track */
+  }
+
+  /* WebKit (Chrome, Edge, Safari) */
+  html::-webkit-scrollbar {
+    width: 4px;   /* ✅ scrollbar width */
+    height: 4px;  /* optional: horizontal scrollbar */
+  }
+
+  html::-webkit-scrollbar-track {
+    background: #0b0b10;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #670D7F, #851988, #D63D98);
+    border-radius: 4px;
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #D63D98, #851988, #670D7F);
+  }
+}
+
+/* About.css */
+
+.custom-steps .ant-steps-item-title {
+  font-weight: 700; /* font-bold */
+  font-size: 1.5rem; /* 2xl equivalent in Tailwind */
+}
+
+.custom-steps .ant-steps-item-description {
+  font-weight: 600; /* semi-bold */
+  font-size: 1.125rem; /* xl */
+  color:black;
+}
