@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; 
 import adobe from "../assets/adobe.png";
-import adobeXD from "../assets/adobeXD.png";
+import capcut from "../assets/capcut.png";
 import behance from "../assets/behance.png";
 import canva from "../assets/canva.png";
 import figma from "../assets/figma.png";
@@ -12,7 +12,7 @@ import pinterest from "../assets/pinterest.png";
 
 const items = [
   { src: adobe, label: "Adobe" },
-  { src: adobeXD, label: "Adobe XD" },
+  { src: capcut, label: "Capcut Pro" },
   { src: behance, label: "Behance" },
   { src: canva, label: "Canva" },
   { src: figma, label: "Figma" },
