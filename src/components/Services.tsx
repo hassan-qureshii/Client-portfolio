@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import flyer from "../assets/flyer.png";
 import linkedin from "../assets/linkedin.png";
 import logofolio from "../assets/logofolio.png";
