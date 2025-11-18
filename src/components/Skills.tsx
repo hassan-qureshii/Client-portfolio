@@ -26,18 +26,21 @@ const SkillCard: React.FC<Skill> = ({ img, name, level }) => {
   }, [level]);
 
   return (
-    <div className="shadow-lg rounded-xl p-5 w-full max-w-lg flex flex-col gap-3 border border-gray-100">
+    <div className="shadow-lg rounded-xl p-5 w-full max-w-lg flex flex-col gap-4 border border-gray-100 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
       {/* Top section */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
         <div className="flex items-center gap-2">
-          <img src={img} alt={name} className="w-8 h-8" />
-          <span className="font-semibold text-[#670D7F] text-xl">{name}</span>
+          <img src={img} alt={name} className="w-10 h-10" />
+          <span className="font-semibold text-[#670D7F] text-lg md:text-xl">{name}</span>
         </div>
-        <span className="text-[#670D7F] text-xl font-semibold">{level}%</span>
+        {/* Percentage: below name on mobile, right side on desktop */}
+        <span className="text-[#670D7F] text-lg md:text-xl font-semibold md:text-right">
+          {level}%
+        </span>
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full bg-white h-3 rounded-full overflow-hidden">
+      <div className="w-full bg-gray-200 h-4 md:h-3 rounded-full overflow-hidden">
         <div
           className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] h-full rounded-full transition-all duration-[1200ms]"
           style={{ width: `${width}%` }}
@@ -51,12 +54,12 @@ const Skills = () => {
   return (
     <div className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] py-16 px-4 flex flex-col items-center justify-center">
       {/* Heading */}
-      <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-        <span className="text-white">Skills & Expertise</span>
+      <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-white">
+        Skills & Expertise
       </h1>
 
       {/* Background container */}
-      <div className="bg-white p-15 rounded-3xl shadow-xl w-full max-w-5xl">
+      <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl w-full max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
           {skillsData.map((skill) => (
             <SkillCard
