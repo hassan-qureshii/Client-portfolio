@@ -28,13 +28,17 @@ const SkillCard: React.FC<Skill> = ({ img, name, level }) => {
   return (
     <div className="shadow-lg rounded-xl p-5 w-full max-w-lg flex flex-col gap-4 border border-gray-100 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
       {/* Top section */}
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+      <div className="flex justify-between items-center">
+        {/* Left side: icon + name + percentage (inline on mobile) */}
         <div className="flex items-center gap-2">
           <img src={img} alt={name} className="w-10 h-10" />
           <span className="font-semibold text-[#670D7F] text-lg md:text-xl">{name}</span>
+          {/* Show percentage inline with name on mobile */}
+          <span className="text-[#670D7F] text-lg font-semibold md:hidden">{level}%</span>
         </div>
-        {/* Percentage: below name on mobile, right side on desktop */}
-        <span className="text-[#670D7F] text-lg md:text-xl font-semibold md:text-right">
+
+        {/* Right side: percentage only visible on desktop */}
+        <span className="hidden md:block text-[#670D7F] text-xl font-semibold">
           {level}%
         </span>
       </div>

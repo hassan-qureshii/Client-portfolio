@@ -5,7 +5,7 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
   return (
-    <div className="w-full min-h-[70vh] flex items-center justify-center bg-[#f3f8fc] px-6 md:px-16">
+    <div className="w-full sm:min-h-[75vh] md:min-h-[70vh] flex items-center justify-center bg-[#f3f8fc] px-6 md:px-16">
       {/* flex-col-reverse ensures image shows first on mobile */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl gap-10">
 
@@ -52,7 +52,7 @@ const Hero = () => {
           </motion.p>
 
           {/* Action Buttons */}
-          <div className="mt-10 flex flex-wrap gap-6 justify-center md:justify-start">
+          <div className="mt-6 md:mt-10 flex flex-wrap gap-6 justify-center md:justify-start">
             {/* Hire Me - Gradient Button */}
             <motion.button
               onClick={() => window.open('https://wa.me/923349313075', '_blank')} 
