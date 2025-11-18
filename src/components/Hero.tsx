@@ -1,7 +1,7 @@
-
 import logo from '../assets/logo.png'
 import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
+import Resume from '../assets/Resume.pdf';
 
 const Hero = () => {
   return (
@@ -56,7 +56,6 @@ const Hero = () => {
             {/* Hire Me - Gradient Button */}
             <motion.button
               onClick={() => window.open('https://wa.me/923349313075', '_blank')} 
-              // Replace 923001234567 with your actual WhatsApp number
               className="px-8 py-2 bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] text-white text-lg md:text-xl font-extrabold rounded-[10px] shadow-xl hover:scale-105 hover:shadow-2xl transition-transform transition-shadow"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -64,9 +63,14 @@ const Hero = () => {
               Hire Me
             </motion.button>
 
-            {/* Download CV - Minimal Styling */}
+            {/* Download CV Button */}
             <motion.button
-              onClick={() => window.open('/Esaar_Fatima_CV.pdf', '_blank')}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = Resume;            // imported file path
+                link.download = 'Resume.pdf';  // filename for download
+                link.click();
+              }}
               className="font-bold text-lg md:text-xl text-gray-800 hover:underline transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
