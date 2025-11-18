@@ -56,7 +56,7 @@ const Hero = () => {
             {/* Hire Me - Gradient Button */}
             <motion.button
               onClick={() => window.open('https://wa.me/923349313075', '_blank')} 
-              className="px-8 py-2 bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] text-white text-lg md:text-xl font-extrabold rounded-[10px] shadow-xl hover:scale-105 hover:shadow-2xl transition-transform transition-shadow"
+              className="px-8 py-2 bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] text-white text-lg md:text-xl font-extrabold rounded-[10px] shadow-xl hover:scale-105 hover:shadow-2xl transition-transform transition-shadow cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -71,7 +71,7 @@ const Hero = () => {
                 link.download = 'Resume.pdf';  // filename for download
                 link.click();
               }}
-              className="font-bold text-lg md:text-xl text-gray-800 hover:underline transition-all"
+              className="font-bold text-lg md:text-xl text-gray-800 hover:underline cursor-pointer transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

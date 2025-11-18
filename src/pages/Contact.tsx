@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaEnvelope, FaWhatsapp, FaBehance, FaLinkedin } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   const [fullName, setFullName] = useState("");
@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
 
   const handleSendWhatsApp = () => {
-    const phoneNumber = "+923349313075";
+    const phoneNumber = "+923349313075"; // replace with your number
     const text = `Hello, my name is ${fullName}.
 Email: ${email}
 Phone: ${phone}
@@ -23,10 +23,10 @@ Message: ${message}`;
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#f3f8fc] text-white">
+    <div className="w-full min-h-screen bg-white">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16">
+      <div className="max-w-[100rem] mx-auto px-10 py-10 md:py-20 grid md:grid-cols-[35%_55%] gap-10 md:bg-black/80 rounded-xl mt-5 md:mt-20">
         
         {/* LEFT SECTION */}
         <motion.div
@@ -35,16 +35,18 @@ Message: ${message}`;
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <h3 className="text-sm uppercase tracking-wide text-gray-300">
+          <h3 className="md:text-sm font-bold text-center md:text-start uppercase tracking-wide md:text-gray-300 text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent">
             Get In Touch
           </h3>
 
-          <h1 className="text-4xl font-bold leading-tight">
+          <h1 className="text-4xl text-center md:text-left font-bold leading-tight md:text-white">
             Let’s Talk For your <br />
-            <span className="text-purple-400">Next Projects</span>
+            <span className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent">
+              Next Projects
+            </span>
           </h1>
 
-          <p className="text-gray-400">
+          <p className="md:text-gray-400 text-center md:text-start">
             Let’s Turn your ideas into reality.
           </p>
 
@@ -56,13 +58,29 @@ Message: ${message}`;
               "Social Media Marketer",
               "Custom Support",
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center">
+              <div key={i} className="flex items-center gap-3 ">
+                <span className="w-8 h-8 rounded-full bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] flex items-center justify-center">
                   <FaCheck className="text-white text-sm" />
                 </span>
-                <p className="text-gray-300 text-lg">{item}</p>
+                <p className="md:text-gray-300 text-lg">{item}</p>
               </div>
             ))}
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-6 mt-8 text-2xl mx-3 md:mx-5">
+            <a href="mailto:reshamjan046@gmail.com" target="_blank" rel="noopener noreferrer" >
+              <FaEnvelope className="text-black md:text-white"/>
+            </a>
+            <a href="https://wa.me/923349313075" target="_blank" rel="noopener noreferrer" >
+              <FaWhatsapp className="text-black md:text-white" />
+            </a>
+            <a href="https://www.behance.net/AminaGulzar" target="_blank" rel="noopener noreferrer" >
+              <FaBehance className="text-black md:text-white" />
+            </a>
+            <a href="https://www.linkedin.com/in/amina-gulzar-341846284/" target="_blank" rel="noopener noreferrer" >
+              <FaLinkedin className="text-black md:text-white" />
+            </a>
           </div>
         </motion.div>
 
@@ -81,7 +99,7 @@ Message: ${message}`;
               placeholder="Full Name *"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="bg-[#1a1a1a] p-4 rounded-xl w-full outline-none text-white placeholder-gray-500"
+              className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
 
             {/* Email */}
@@ -90,7 +108,7 @@ Message: ${message}`;
               placeholder="Email Address *"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-[#1a1a1a] p-4 rounded-xl w-full outline-none text-white placeholder-gray-500"
+              className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
 
             {/* Phone */}
@@ -99,7 +117,7 @@ Message: ${message}`;
               placeholder="Phone Number *"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="bg-[#1a1a1a] p-4 rounded-xl w-full outline-none text-white placeholder-gray-500"
+              className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
 
             {/* Subject */}
@@ -108,7 +126,7 @@ Message: ${message}`;
               placeholder="Subject *"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className="bg-[#1a1a1a] p-4 rounded-xl w-full outline-none text-white placeholder-gray-500"
+              className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
           </div>
 
@@ -118,15 +136,15 @@ Message: ${message}`;
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={6}
-            className="bg-[#1a1a1a] p-4 rounded-xl w-full outline-none text-white placeholder-gray-500"
+            className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
           />
 
           {/* Button */}
           <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.00 }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleSendWhatsApp}
-            className="bg-purple-500 hover:bg-purple-600 transition p-4 rounded-xl font-semibold w-full text-center"
+            className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] transition p-5 rounded-xl font-semibold w-full text-center text-white"
           >
             Send Us Message →
           </motion.button>
