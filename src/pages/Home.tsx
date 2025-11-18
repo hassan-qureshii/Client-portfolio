@@ -1,5 +1,6 @@
 import Header from '../components/Header/Header'
 import Hero from '../components/Hero'
+import Banner from '../components/Banner'
 import Carousel from '../components/Carousel'
 import Skills from '../components/Skills'
 import Services from '../components/Services'
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       <Header />
       <Hero/>
+      <Banner/>
       <Carousel/>
       <Skills/>
       <Services/>
