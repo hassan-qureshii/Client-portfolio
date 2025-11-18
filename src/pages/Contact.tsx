@@ -2,6 +2,7 @@ import Header from "../components/Header/Header";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheck, FaEnvelope, FaWhatsapp, FaBehance, FaLinkedin } from "react-icons/fa";
+import Footer from '../components/Footer'
 
 const Contact: React.FC = () => {
   const [fullName, setFullName] = useState("");
@@ -11,7 +12,7 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
 
   const handleSendWhatsApp = () => {
-    const phoneNumber = "+923349313075"; // replace with your number
+    const phoneNumber = "+923349313075"; 
     const text = `Hello, my name is ${fullName}.
 Email: ${email}
 Phone: ${phone}
@@ -26,7 +27,7 @@ Message: ${message}`;
     <div className="w-full min-h-screen bg-white">
       <Header />
 
-      <div className="max-w-[100rem] mx-auto px-10 py-10 md:py-20 grid md:grid-cols-[35%_55%] gap-10 md:bg-black/80 rounded-xl mt-5 md:mt-20">
+      <div className="max-w-[100rem] mx-auto px-10 py-10 md:py-20 grid md:grid-cols-[35%_55%] gap-10 bg-black/75 rounded-none md:rounded-xl  md:my-20">
         
         {/* LEFT SECTION */}
         <motion.div
@@ -35,18 +36,18 @@ Message: ${message}`;
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <h3 className="md:text-sm font-bold text-center md:text-start uppercase tracking-wide md:text-gray-300 text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent">
+          <h3 className="md:text-sm font-semibold text-center md:text-start uppercase md:text-gray-300 text-2xl bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent">
             Get In Touch
           </h3>
 
-          <h1 className="text-4xl text-center md:text-left font-bold leading-tight md:text-white">
+          <h1 className="text-4xl text-center md:text-left font-bold leading-tight text-gray-200">
             Let’s Talk For your <br />
             <span className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent">
               Next Projects
             </span>
           </h1>
 
-          <p className="md:text-gray-400 text-center md:text-start">
+          <p className="text-gray-400 text-center md:text-start">
             Let’s Turn your ideas into reality.
           </p>
 
@@ -62,7 +63,7 @@ Message: ${message}`;
                 <span className="w-8 h-8 rounded-full bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] flex items-center justify-center">
                   <FaCheck className="text-white text-sm" />
                 </span>
-                <p className="md:text-gray-300 text-lg">{item}</p>
+                <p className="text-gray-300 text-lg">{item}</p>
               </div>
             ))}
           </div>
@@ -70,16 +71,16 @@ Message: ${message}`;
           {/* Social Links */}
           <div className="flex gap-6 mt-8 text-2xl mx-3 md:mx-5">
             <a href="mailto:reshamjan046@gmail.com" target="_blank" rel="noopener noreferrer" >
-              <FaEnvelope className="text-black md:text-white"/>
+              <FaEnvelope className="text-white"/>
             </a>
             <a href="https://wa.me/923349313075" target="_blank" rel="noopener noreferrer" >
-              <FaWhatsapp className="text-black md:text-white" />
+              <FaWhatsapp className="text-white" />
             </a>
             <a href="https://www.behance.net/AminaGulzar" target="_blank" rel="noopener noreferrer" >
-              <FaBehance className="text-black md:text-white" />
+              <FaBehance className="text-white" />
             </a>
             <a href="https://www.linkedin.com/in/amina-gulzar-341846284/" target="_blank" rel="noopener noreferrer" >
-              <FaLinkedin className="text-black md:text-white" />
+              <FaLinkedin className="text-white" />
             </a>
           </div>
         </motion.div>
@@ -93,7 +94,6 @@ Message: ${message}`;
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-            {/* Full Name */}
             <input
               type="text"
               placeholder="Full Name *"
@@ -102,7 +102,6 @@ Message: ${message}`;
               className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
 
-            {/* Email */}
             <input
               type="email"
               placeholder="Email Address *"
@@ -111,7 +110,6 @@ Message: ${message}`;
               className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
 
-            {/* Phone */}
             <input
               type="text"
               placeholder="Phone Number *"
@@ -120,7 +118,6 @@ Message: ${message}`;
               className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
             />
 
-            {/* Subject */}
             <input
               type="text"
               placeholder="Subject *"
@@ -130,7 +127,6 @@ Message: ${message}`;
             />
           </div>
 
-          {/* Message */}
           <textarea
             placeholder="Write message"
             value={message}
@@ -139,7 +135,6 @@ Message: ${message}`;
             className="bg-[#1a1a1a] p-5 rounded-xl w-full outline-none text-white placeholder-gray-500 focus:ring-2 focus:ring-[#D63D98] transition"
           />
 
-          {/* Button */}
           <motion.button
             whileHover={{ scale: 1.00 }}
             whileTap={{ scale: 0.95 }}
@@ -151,6 +146,7 @@ Message: ${message}`;
         </motion.div>
 
       </div>
+      <Footer/>
     </div>
   );
 };
