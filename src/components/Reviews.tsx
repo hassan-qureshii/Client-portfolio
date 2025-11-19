@@ -57,7 +57,7 @@ const Reviews = () => {
           <img 
             src={main} 
             alt="Main testimonial" 
-            className="w-full max-w-sm h-[220px] object-contain mb-10 md:max-w-2xl md:h-[400px] md:ml-[100px]" 
+            className="w-full max-w-lg h-auto object-contain mb-10 md:max-w-[40rem] md:ml-[100px]" 
           />
         </motion.div>
 
