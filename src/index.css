@@ -46,3 +46,12 @@ body {
   font-size: 1.125rem; /* xl */
   color:black;
 }
+
+/* Tailwind custom class */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
