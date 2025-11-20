@@ -53,16 +53,17 @@ const Faqs = () => {
       <div className="w-full flex flex-col items-center">
         <Header />
 
-        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent mb-4 text-center my-10">
+        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent mb-4 text-center my-10 px-4">
           Frequently Asked Questions
         </h1>
 
-        <p className="text-center max-w-2xl mx-auto mb-8">
+        <p className="text-center max-w-2xl mx-auto mb-8 px-4">
           Got questions? Browse the common questions below — or search to find an exact topic. 
           If you still need help, hit the contact CTA at the bottom.
         </p>
 
-        <div className="w-full max-w-2xl ">
+        {/* FAQ Accordion List */}
+        <div className="w-full max-w-2xl px-4 sm:px-6">
           {faqs.map((faq, index) => (
             <Accordion key={index}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -75,7 +76,8 @@ const Faqs = () => {
           ))}
         </div>
 
-        <div className="text-center my-10">
+        {/* Contact CTA */}
+        <div className="text-center my-10 px-4">
           <p className="mb-4 font-medium">
             Still have questions? <br />
             Reach out and I’ll reply within 24–48 hours.
