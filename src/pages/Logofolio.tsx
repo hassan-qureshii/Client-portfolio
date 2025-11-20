@@ -16,14 +16,13 @@ import logo10 from "../assets/logofolio/logo10.png";
 import logo11 from "../assets/logofolio/logo11.png";
 import logo12 from "../assets/logofolio/logo12.png";
 import logo13 from "../assets/logofolio/logo13.png";
-import logo14 from "../assets/logofolio/logo14.png";
 import logo15 from "../assets/logofolio/logo15.png";
 import logo16 from "../assets/logofolio/logo16.png";
 
 const logos = [
-  logo1, logo2, logo3, logo4, logo5, logo6,
-  logo7, logo12, logo9, logo10, logo8, logo15,
-  logo13, logo11, logo14, logo16
+  logo1, logo2, logo3, logo7, logo6, logo5,
+  logo4, logo12, logo16, logo8, logo10, logo9,
+  logo13, logo11, logo15
 ];
 
 const Logofolio = () => {
@@ -68,7 +67,7 @@ const Logofolio = () => {
         </p>
       </motion.div>
 
-      {/* Logos Main Container */}
+      {/* Logos Grid */}
       <motion.div
         className="max-w-7xl mx-auto mt-12 px-6"
         initial={{ opacity: 0 }}
@@ -76,18 +75,18 @@ const Logofolio = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {logos.map((logo, index) => (
             <motion.div
               key={index}
-              className="w-full aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white"
+              className="w-full aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white flex items-center justify-center"
               whileHover={{ scale: 1.05 }}
               onClick={() => setSelectedLogo(logo)}
             >
               <img
                 src={logo}
                 alt={`Logo ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
               />
             </motion.div>
           ))}
@@ -107,7 +106,7 @@ const Logofolio = () => {
             <motion.img
               src={selectedLogo}
               alt="Selected Logo"
-              className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
+              className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}

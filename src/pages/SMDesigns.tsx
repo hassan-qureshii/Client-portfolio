@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
 
 import social1 from "../assets/smdesign/social1.png";
 import social3 from "../assets/smdesign/social3.png";
@@ -82,14 +82,14 @@ const SMDesigns = () => {
         {socials.map((img, index) => (
           <motion.div
             key={index}
-            className="w-full aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer"
+            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white flex items-center justify-center"
             whileHover={{ scale: 1.05 }}
             onClick={() => setSelectedImage(img)}
           >
             <img
               src={img}
               alt={`Social Design ${index + 1}`}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-80 object-contain transition-transform duration-300 hover:scale-105"
             />
           </motion.div>
         ))}
@@ -108,7 +108,7 @@ const SMDesigns = () => {
             <motion.img
               src={selectedImage}
               alt="Selected Social Design"
-              className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
+              className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
@@ -118,7 +118,7 @@ const SMDesigns = () => {
       </AnimatePresence>
 
       <div className="mt-10">
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );

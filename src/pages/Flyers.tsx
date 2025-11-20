@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
 
 import flyer1 from "../assets/flyer/flyer1.png";
 import flyer2 from "../assets/flyer/flyer2.png";
@@ -19,8 +19,23 @@ import flyer16 from "../assets/flyer/flyer16.png";
 import flyer17 from "../assets/flyer/flyer17.png";
 import flyer18 from "../assets/flyer/flyer18.png";
 
-const flyers = [flyer16, flyer13, flyer14, flyer15, flyer17, flyer18, flyer12 , flyer1, flyer2, flyer3, flyer4, flyer5, flyer6, flyer8, flyer11 ];
-
+const flyers = [
+  flyer16,
+  flyer13,
+  flyer14,
+  flyer15,
+  flyer17,
+  flyer18,
+  flyer12,
+  flyer1,
+  flyer2,
+  flyer3,
+  flyer4,
+  flyer5,
+  flyer6,
+  flyer8,
+  flyer11,
+];
 
 const Flyers = () => {
   const [selectedFlyer, setSelectedFlyer] = useState<string | null>(null);
@@ -52,15 +67,16 @@ const Flyers = () => {
 
       {/* Interactive Section */}
       <motion.div
-        className="max-w-3xl mx-auto text-center my-12 p-6 "
+        className="max-w-3xl mx-auto text-center my-12 p-6"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
         <p className="text-black text-lg">
-          Every flyer, card, and cover is designed to grab attention and deliver your message with impact.
-          Hover over this section to feel the subtle interaction.
+          Every flyer, card, and cover is designed to grab attention and deliver
+          your message with impact. Hover over this section to feel the subtle
+          interaction.
         </p>
       </motion.div>
 
@@ -75,14 +91,14 @@ const Flyers = () => {
         {flyers.map((flyer, index) => (
           <motion.div
             key={index}
-            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer"
+            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white flex items-center justify-center"
             whileHover={{ scale: 1.05 }}
             onClick={() => setSelectedFlyer(flyer)}
           >
             <img
               src={flyer}
               alt={`Flyer ${index + 1}`}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-80 object-contain transition-transform duration-300 hover:scale-105"
             />
           </motion.div>
         ))}
@@ -101,7 +117,7 @@ const Flyers = () => {
             <motion.img
               src={selectedFlyer}
               alt="Selected Flyer"
-              className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
+              className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
@@ -111,7 +127,7 @@ const Flyers = () => {
       </AnimatePresence>
 
       <div className="mt-10">
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
