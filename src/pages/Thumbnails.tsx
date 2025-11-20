@@ -1,5 +1,24 @@
 import Header from '../components/Header/Header'
 import { motion } from "framer-motion"
+import Footer from '../components/Footer'
+
+import thumbnail1 from '../assets/Thumbnails/thumbnail1.png';
+import thumbnail2 from '../assets/Thumbnails/thumbnail2.png';
+import thumbnail3 from '../assets/Thumbnails/thumbnail3.png';
+import thumbnail4 from '../assets/Thumbnails/thumbnail4.png';
+import thumbnail5 from '../assets/Thumbnails/thumbnail5.png';
+import thumbnail6 from '../assets/Thumbnails/thumbnail6.png';
+import thumbnail7 from '../assets/Thumbnails/thumbnail7.png';
+import thumbnail8 from '../assets/Thumbnails/thumbnail8.png';
+import thumbnail9 from '../assets/Thumbnails/thumbnail9.png';
+import thumbnail10 from '../assets/Thumbnails/thumbnail10.png'
+import thumbnail12 from '../assets/Thumbnails/thumbnail12.png';
+import thumbnail13 from '../assets/Thumbnails/thumbnail13.png';
+
+const thumbnails = [
+  thumbnail1, thumbnail2, thumbnail3, thumbnail4, thumbnail5, thumbnail6, thumbnail7,
+  thumbnail8, thumbnail9, thumbnail10, thumbnail12, thumbnail13
+];
 
 const Thumbnails = () => {
   return (
@@ -40,8 +59,35 @@ const Thumbnails = () => {
           Hover over this section to feel the subtle interaction ✨
         </p>
       </motion.div>
+
+      {/* Thumbnails Grid */}
+      <motion.div
+        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12 px-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        {thumbnails.map((thumb, index) => (
+          <motion.div
+            key={index}
+            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+          >
+            <img
+              src={thumb}
+              alt={`Thumbnail ${index + 1}`}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <div className="mt-10">
+        <Footer/>
+      </div>
     </div>
   )
 }
 
-export default Thumbnails
+export default Thumbnails;
