@@ -10,7 +10,6 @@ import flyer4 from "../assets/flyer/flyer4.png";
 import flyer5 from "../assets/flyer/flyer5.png";
 import flyer6 from "../assets/flyer/flyer6.png";
 import flyer8 from "../assets/flyer/flyer8.png";
-import flyer9 from "../assets/flyer/flyer9.png";
 import flyer11 from "../assets/flyer/flyer11.png";
 import flyer12 from "../assets/flyer/flyer12.png";
 import flyer13 from "../assets/flyer/flyer13.png";
@@ -19,9 +18,8 @@ import flyer15 from "../assets/flyer/flyer15.png";
 import flyer16 from "../assets/flyer/flyer16.png";
 import flyer17 from "../assets/flyer/flyer17.png";
 import flyer18 from "../assets/flyer/flyer18.png";
-import flyer19 from "../assets/flyer/flyer19.png";
 
-const flyers = [flyer16, flyer13, flyer14, flyer15, flyer17, flyer18, flyer12 , flyer19, flyer1, flyer2, flyer3, flyer4, flyer5, flyer6, flyer8, flyer9, flyer11 ];
+const flyers = [flyer16, flyer13, flyer14, flyer15, flyer17, flyer18, flyer12 , flyer1, flyer2, flyer3, flyer4, flyer5, flyer6, flyer8, flyer11 ];
 
 
 const Flyers = () => {
