@@ -79,16 +79,16 @@ Message: ${message}`;
           {/* Social Links */}
           <div className="flex gap-6 mt-8 text-2xl mx-3 md:mx-5">
             <a href="mailto:reshamjan046@gmail.com" target="_blank" rel="noopener noreferrer" >
-              <FaEnvelope className="text-black"/>
+              <FaEnvelope className="text-[#8A1C89]"/>
             </a>
             <a href="https://wa.me/923349313075" target="_blank" rel="noopener noreferrer" >
-              <FaWhatsapp className="text-black" />
+              <FaWhatsapp className="text-[#8A1C89]" />
             </a>
             <a href="https://www.behance.net/AminaGulzar" target="_blank" rel="noopener noreferrer" >
-              <FaBehance className="text-black" />
+              <FaBehance className="text-[#8A1C89]" />
             </a>
             <a href="https://www.linkedin.com/in/amina-gulzar-341846284/" target="_blank" rel="noopener noreferrer" >
-              <FaLinkedin className="text-black" />
+              <FaLinkedin className="text-[#8A1C89]" />
             </a>
           </div>
         </motion.div>
