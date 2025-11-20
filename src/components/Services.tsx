@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import flyer from "../assets/flyer.png";
 import linkedin from "../assets/linkedin.png";
 import logofolio from "../assets/logofolio.png";
@@ -6,12 +7,12 @@ import smpartner from "../assets/smpartner.png";
 import thumbnails from "../assets/thumbnails.png";
 
 const services = [
-  { img: logofolio },
-  { img: smdesigns },
-  { img: linkedin },
-  { img: thumbnails },
-  { img: flyer },
-  { img: smpartner },
+  { img: logofolio, path: "/logofolio", title: "Logofolio" },
+  { img: smdesigns, path: "/smdesigns", title: "Social Media Designs" },
+  { img: linkedin, path: "/linkedin", title: "LinkedIn Branding" },
+  { img: thumbnails, path: "/thumbnails", title: "YouTube Thumbnails" },
+  { img: flyer, path: "/flyer", title: "Flyer Design" },
+  { img: smpartner, path: "/smpartner", title: "Social Media Partnership" },
 ];
 
 const Services = () => {
@@ -31,13 +32,18 @@ const Services = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[90rem]">
         {services.map((service, index) => (
-          <div key={index} className="w-full rounded-xl overflow-hidden shadow-md">
+          <Link
+            key={index}
+            to={service.path}
+            className="w-full rounded-xl overflow-hidden shadow-md hover:scale-105 transition"
+          >
             <img
               src={service.img}
-              alt={`service-${index}`}
+              alt={service.title}
               className="w-full h-full object-cover"
             />
-          </div>
+            <p className="text-center font-semibold mt-2">{service.title}</p>
+          </Link>
         ))}
       </div>
 
@@ -48,7 +54,7 @@ const Services = () => {
         rel="noopener noreferrer"
         className="mt-12 inline-block bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:scale-105 transition"
       >
-        💬 Chat on WhatsApp for Urgent Requests
+        Chat on WhatsApp for Urgent Requests
       </a>
     </div>
   );
