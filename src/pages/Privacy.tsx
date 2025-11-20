@@ -78,8 +78,6 @@ const Privacy = () => {
 
         {/* Divider before footer */}
         <hr className="border-t border-gray-300 my-6" />
-
-        <p className="text-sm text-gray-500 mb-2">Last Updated: October 2025</p>
         <p className="text-sm text-gray-500">© All Rights Reserved</p>
       </motion.div>
 
