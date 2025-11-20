@@ -79,9 +79,12 @@ const Logofolio = () => {
           {logos.map((logo, index) => (
             <motion.div
               key={index}
-              className="w-full aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white flex items-center justify-center"
+              className="w-full aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer 
+                         bg-[linear-gradient(145deg,_#670D7F,_#851988,_#D63D98)] 
+                         flex items-center justify-center"
               whileHover={{ scale: 1.05 }}
               onClick={() => setSelectedLogo(logo)}
+              role="button"
             >
               <img
                 src={logo}
@@ -103,14 +106,18 @@ const Logofolio = () => {
             exit={{ opacity: 0 }}
             onClick={() => setSelectedLogo(null)}
           >
-            <motion.img
-              src={selectedLogo}
-              alt="Selected Logo"
-              className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
+            <motion.div
+              onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
-            />
+            >
+              <img
+                src={selectedLogo}
+                alt="Selected Logo"
+                className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -33,7 +33,7 @@ const Privacy = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-white shadow-lg rounded-lg p-8 max-w-4xl mx-auto text-center transition-transform hover:scale-[1.01] duration-300"
+        className="md:bg-white shadow-lg rounded-lg p-8 max-w-4xl mx-auto text-center transition-transform hover:scale-[1.01] duration-300"
       >
         {/* Accordion-style Terms */}
         <details className="mb-6 cursor-pointer">

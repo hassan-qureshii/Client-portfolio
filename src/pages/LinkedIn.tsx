@@ -76,9 +76,12 @@ const LinkedIn = () => {
         {linkedins.map((banner, index) => (
           <motion.div
             key={index}
-            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white flex items-center justify-center"
+            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer 
+                       bg-[linear-gradient(145deg,_#670D7F,_#851988,_#D63D98)] 
+                       flex items-center justify-center"
             whileHover={{ scale: 1.05 }}
             onClick={() => setSelectedBanner(banner)}
+            role="button"
           >
             <img
               src={banner}
