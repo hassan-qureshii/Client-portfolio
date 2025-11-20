@@ -70,8 +70,7 @@ const Logofolio = () => {
 
       {/* Logos Main Container */}
       <motion.div
-        className="max-w-7xl mx-auto mt-12 px-6 py-10 rounded-xl shadow-xl 
-                   bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98]"
+        className="max-w-7xl mx-auto mt-12 px-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
