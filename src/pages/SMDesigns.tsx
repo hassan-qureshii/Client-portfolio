@@ -25,10 +25,10 @@ import social18 from "../assets/smdesign/social18.png";
 import social20 from "../assets/smdesign/social20.png";
 
 const socials = [
-  social1, social7, social3, social4, social5,
-  social6, social9, social8,
-  social11, social10, social12, social13, social14, social15,
-  social16, social17, social18, social20
+  social1, social14, social13, social4, social17,
+  social8, social7, social15,
+  social11, social6, social20, social9, social3, social16,
+  social10, social5, social18, social12
 ];
 
 const SMDesigns = () => {

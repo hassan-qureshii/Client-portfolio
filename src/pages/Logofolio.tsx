@@ -21,9 +21,9 @@ import logo15 from "../assets/logofolio/logo15.png";
 import logo16 from "../assets/logofolio/logo16.png";
 
 const logos = [
-  logo1, logo2, logo3, logo7, logo6, logo5,
-  logo4, logo12, logo16, logo8, logo10, logo9,
-  logo13, logo11, logo15
+  logo1, logo5, logo10, logo13, logo4, logo2,
+  logo7, logo8, logo16, logo12, logo3, logo6,
+  logo9, logo11, logo15
 ];
 
 const Logofolio = () => {

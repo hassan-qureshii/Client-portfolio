@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../components/Footer";
+import Tilt from "react-parallax-tilt";
 
 import flyer1 from "../assets/flyer/flyer1.png";
 import flyer2 from "../assets/flyer/flyer2.png";
@@ -20,28 +21,25 @@ import flyer17 from "../assets/flyer/flyer17.png";
 import flyer18 from "../assets/flyer/flyer18.png";
 
 const flyers = [
-  flyer16,
-  flyer13,
-  flyer14,
-  flyer15,
-  flyer17,
-  flyer18,
-  flyer12,
-  flyer1,
-  flyer2,
-  flyer3,
-  flyer4,
-  flyer5,
-  flyer6,
-  flyer8,
-  flyer11,
+  flyer16, flyer4, flyer14, flyer5, flyer18, flyer15,
+  flyer1, flyer12, flyer2, flyer13, flyer3, flyer17,
+  flyer6, flyer8, flyer11,
 ];
 
 const Flyers = () => {
   const [selectedFlyer, setSelectedFlyer] = useState<string | null>(null);
 
+  // ✅ Close modal with Esc key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedFlyer(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
-    <div>
+    <div className="bg-gray-50 scroll-smooth">
       <Header />
 
       {/* Hero Section */}
@@ -51,57 +49,68 @@ const Flyers = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent mb-4 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent mb-3">
           Flyers, Cards & Covers Designs
         </h1>
 
-        <motion.p
-          className="text-lg font-bold text-black"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
+        <p className="text-gray-700 text-lg">
           Visuals That Speak
-        </motion.p>
+        </p>
       </motion.div>
 
       {/* Interactive Section */}
       <motion.div
-        className="max-w-3xl mx-auto text-center my-12 p-6"
+        className="max-w-3xl mx-auto text-center px-5"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
         <p className="text-black text-lg">
-          Every flyer, card, and cover is designed to grab attention and deliver
-          your message with impact. Hover over this section to feel the subtle
-          interaction.
+          Every flyer, card, and cover is designed to grab attention and deliver your message with impact.
         </p>
       </motion.div>
 
-      {/* Flyers Grid */}
+      {/* Flyers Grid (Masonry style) */}
       <motion.div
-        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12 px-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        className="max-w-7xl mx-auto mt-12 px-6 columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.1 } }
+        }}
       >
         {flyers.map((flyer, index) => (
           <motion.div
             key={index}
-            className="w-full overflow-hidden rounded-lg shadow-lg cursor-pointer 
-                       bg-[linear-gradient(145deg,_#670D7F,_#851988,_#D63D98)] 
-                       flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            onClick={() => setSelectedFlyer(flyer)}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
           >
-            <img
-              src={flyer}
-              alt={`Flyer ${index + 1}`}
-              className="w-full h-80 object-contain transition-transform duration-300 hover:scale-105"
-            />
+            <motion.div
+              whileHover={{ scale: 1.02, rotate: 0.3 }}   // ✅ subtle hover
+              whileTap={{ scale: 0.98 }}                  // ✅ gentle tap
+              transition={{ type: "spring", stiffness: 250 }}
+            >
+              <Tilt glareEnable={true} glareMaxOpacity={0.15} scale={1.01}>
+                <div
+                  onClick={() => setSelectedFlyer(flyer)}
+                  className="w-full overflow-hidden rounded-xl shadow-lg cursor-pointer bg-white hover:shadow-2xl transition-all"
+                >
+                  <img
+                    src={flyer}
+                    alt={`Flyer ${index + 1}`}
+                    className="w-full object-contain p-4"
+                    loading="lazy"
+                  />
+                </div>
+              </Tilt>
+            </motion.div>
           </motion.div>
         ))}
       </motion.div>
@@ -118,21 +127,22 @@ const Flyers = () => {
           >
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
             >
               <img
                 src={selectedFlyer}
                 alt="Selected Flyer"
-                className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl"
+                className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
               />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="mt-10">
+      <div className="mt-20">
         <Footer />
       </div>
     </div>

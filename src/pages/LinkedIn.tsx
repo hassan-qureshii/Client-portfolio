@@ -14,13 +14,13 @@ import linkedin7 from "../assets/linkedin/linkedin7.png";
 import linkedin8 from "../assets/linkedin/linkedin8.png";
 
 const linkedins = [
-  linkedin1,
-  linkedin2,
-  linkedin3,
-  linkedin4,
   linkedin5,
-  linkedin6,
+  linkedin1,
+  linkedin3,
   linkedin7,
+  linkedin2,
+  linkedin6,
+  linkedin4,
   linkedin8,
 ];
 
