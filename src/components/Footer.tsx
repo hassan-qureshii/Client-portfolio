@@ -19,7 +19,6 @@ const Footer = () => {
     { name: "Home", icon: FaHome, path: "/" },
     { name: "About", icon: FaInfoCircle, path: "/about" },
     { name: "Contact", icon: FaEnvelope, path: "/contact" },
-    { name: "Portfolio", icon: FaFolderOpen, path: "/portfolio" },
     { name: "FAQs", icon: FaQuestionCircle, path: "/faq" },
     { name: "Terms & Conditions", icon: FaFileContract, path: "/terms" },
   ];
