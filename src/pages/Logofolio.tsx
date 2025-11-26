@@ -6,7 +6,6 @@ import Tilt from "react-parallax-tilt";
 
 import logo1 from "../assets/logofolio/logo1.png";
 import logo2 from "../assets/logofolio/logo2.png";
-import logo3 from "../assets/logofolio/logo3.png";
 import logo4 from "../assets/logofolio/logo4.png";
 import logo5 from "../assets/logofolio/logo5.png";
 import logo6 from "../assets/logofolio/logo6.png";
@@ -22,7 +21,7 @@ import logo16 from "../assets/logofolio/logo16.png";
 
 const logos = [
   logo1, logo5, logo10, logo13, logo4, logo2,
-  logo7, logo8, logo16, logo12, logo3, logo6,
+  logo7, logo8, logo16, logo12 , logo6,
   logo9, logo11, logo15
 ];
 
