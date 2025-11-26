@@ -84,8 +84,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            whileHover={{ scale: 1.05, rotate: 2 }}
+          <div
             className="p-2 rounded-full bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] shadow-[0_10px_30px_rgba(103,13,127,0.4)]"
           >
             <img 
@@ -93,12 +92,12 @@ const Hero = () => {
               alt="Amina Gulzar" 
               className="h-64 w-64 md:h-[22rem] md:w-[22rem] rounded-full bg-white p-2"
             />
-          </motion.div>
+          </div>
         </motion.div>
 
       </div>
     </div>
   )
 }
-
+  
 export default Hero
