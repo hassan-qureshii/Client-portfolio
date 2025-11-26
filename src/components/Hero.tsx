@@ -16,11 +16,8 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl md:text-5xl font-extrabold flex flex-wrap md:flex-nowrap justify-center md:justify-start gap-2">
-            <span className="text-black">Hi, I'm</span>
-            <span className="bg-gradient-to-r from-[#670D7F] via-[#851988] to-[#D63D98] bg-clip-text text-transparent">
-              Amina Gulzar
-            </span>
+          <h1 className="text-3xl md:text-4xl font-bold ">
+           <b>Hi</b> I'm Amina Gulzar 
           </h1>
 
           <p className="mt-4 text-gray-700 text-lg md:text-xl">
