@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import {
   FaHome,
-  FaFolderOpen,
   FaQuestionCircle,
   FaFileContract,
   FaInfoCircle,
@@ -23,13 +22,13 @@ const Footer = () => {
     { name: "Terms & Conditions", icon: FaFileContract, path: "/terms" },
   ];
 
-  // Social media + new icons (without href)
+  // Social media links
   const socialLinks = [
     { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/amina-gulzar-341846284/" },
     { icon: FaInstagram, href: "https://www.instagram.com/amina454096/?utm_source=qr&igsh=MTNzN2tleGozN3Izcg%3D%3D#" },
     { icon: FaBehance, href: "https://www.behance.net/AminaGulzar" },
 
-    // Added (NO href as requested)
+    // These two have no URL (as you requested)
     { icon: SiUpwork, href: null },
     { icon: SiFiverr, href: null },
   ];
@@ -56,7 +55,8 @@ const Footer = () => {
                 key={index}
                 className="flex items-center gap-2 hover:underline cursor-pointer"
               >
-                <link.icon /> <Link to={link.path}>{link.name}</Link>
+                <link.icon />
+                <Link to={link.path}>{link.name}</Link>
               </li>
             ))}
           </ul>
@@ -66,7 +66,7 @@ const Footer = () => {
         <div className="space-y-3">
           <h2 className="text-xl font-semibold mb-4">Let's Connect</h2>
           <div className="flex gap-4 mb-4 text-xl">
-            {socialLinks.map((social, index) => (
+            {socialLinks.map((social, index) =>
               social.href ? (
                 <a
                   key={index}
@@ -85,10 +85,9 @@ const Footer = () => {
                   <social.icon size={18} />
                 </div>
               )
-            ))}
+            )}
           </div>
         </div>
-
       </div>
 
       {/* Footer Bottom */}
